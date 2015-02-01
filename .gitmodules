@@ -1,0 +1,6 @@
+[submodule "Slic3r"]
+	path = Slic3r
+	url = git@github.com:Nancyborg/Slic3r.git
+[submodule "Marlin"]
+	path = Marlin
+	url = git@github.com:Nancyborg/Marlin.git
