@@ -1,0 +1,13 @@
+difference()
+{
+cylinder(
+	d=10,
+	h=120,
+	$fn=100
+);
+cylinder(
+	d=9,
+	h=120,
+	$fn=100
+);
+}

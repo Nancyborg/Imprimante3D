@@ -1,0 +1,25 @@
+union()
+{
+difference()
+{
+cylinder(
+	d=112,
+	h=2
+);
+cylinder(
+	d=107,
+	h=2
+);
+}
+difference()
+{
+cylinder(
+	d=110,
+	h=120
+);
+cylinder(
+	d=109,
+	h=120
+);
+}
+}
