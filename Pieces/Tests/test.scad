@@ -1,1 +1,0 @@
-cube(size = [40, 40, 40], center = true);
