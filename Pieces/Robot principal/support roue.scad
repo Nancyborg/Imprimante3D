@@ -1,4 +1,6 @@
-largeur_profile = 21;
+marge_mecanique = 1;
+
+largeur_profile = 20 + marge_mecanique;
 
 support_moteur_largeur = 28;
 support_moteur_epaisseur = 10;
@@ -10,9 +12,9 @@ roue_largeur = 20 + 2 * roue_jeu;
 
 decalage_centre_roue_support_moteur = 14;
 
-codeuse_diametre = 24;
+codeuse_diametre = 28;
 codeuse_profondeur = 21;
-codeuse_roue_diametre = 50;
+codeuse_roue_diametre = 54;
 codeuse_roue_epaisseur = 12;
 codeuse_distance_fixation_codeuse = 20;
 codeuse_decalage_ressorts = 3;
@@ -23,9 +25,9 @@ codeuse_axe_diametre = 4;
 codeuse_support_cote = codeuse_roulement_diametre + 8;
 codeuse_support_hauteur = 20;
 
-plaque_epaisseur = 10;
+plaque_epaisseur = 4;
 plaque_largeur = 115;
-plaque_longueur = roue_largeur + support_moteur_largeur + 3 * plaque_epaisseur + largeur_profile + codeuse_profondeur + codeuse_distance_fixation_codeuse + codeuse_roue_epaisseur; 
+plaque_longueur = roue_largeur + support_moteur_largeur + plaque_epaisseur + largeur_profile + codeuse_profondeur + codeuse_distance_fixation_codeuse + codeuse_roue_epaisseur; 
 
 difference(){
 	union(){
@@ -42,19 +44,20 @@ difference(){
 
 			//support codeuse
 			translate([
-				largeur_profile + 3 * plaque_epaisseur + codeuse_profondeur + codeuse_roue_epaisseur / 2 - codeuse_distance_fixation_codeuse - codeuse_support_cote / 2, 
+				largeur_profile + 3 * plaque_epaisseur + codeuse_roue_epaisseur + codeuse_distance_fixation_codeuse - codeuse_support_cote, 
 				plaque_largeur / 2 - codeuse_distance_support - codeuse_support_cote / 2, 
 				0
 			]){
 				cube([codeuse_support_cote, codeuse_support_cote, codeuse_support_hauteur]);
-			}
-			translate([
-				largeur_profile + 3 * plaque_epaisseur + codeuse_profondeur + codeuse_roue_epaisseur / 2 - codeuse_distance_fixation_codeuse - codeuse_support_cote / 2, 
-				plaque_largeur / 2 + codeuse_distance_support - codeuse_support_cote / 2, 
+			
+                translate([
+				0, 
+				2 * codeuse_distance_support + codeuse_support_cote / 2, 
 				0
 			]){
 				cube([codeuse_support_cote, codeuse_support_cote, codeuse_support_hauteur]);
 			}
+              }
 
 			translate([
 				largeur_profile + 4 * plaque_epaisseur + codeuse_profondeur + codeuse_roue_epaisseur + roue_largeur + 1, 
@@ -97,10 +100,10 @@ difference(){
 		//retrais pour extrusion
 		translate([0,0,-1]){
 			//codeuse
-			translate([largeur_profile + 3 * plaque_epaisseur, plaque_largeur / 2 - codeuse_diametre / 2 , 0]){
-				cube([codeuse_profondeur + 1, codeuse_diametre, plaque_epaisseur + 2]);
+			translate([largeur_profile + 3 * plaque_epaisseur + codeuse_roue_epaisseur, plaque_largeur / 2 - codeuse_diametre / 2 , 0]){
+				cube([codeuse_profondeur, codeuse_diametre, plaque_epaisseur + 2]);
 			}
-			translate([largeur_profile + 3 * plaque_epaisseur + codeuse_profondeur, plaque_largeur / 2 - codeuse_roue_diametre / 2 , 0]){
+			translate([largeur_profile + 3 * plaque_epaisseur + 1, plaque_largeur / 2 - codeuse_roue_diametre / 2 , 0]){
 				cube([codeuse_roue_epaisseur, codeuse_roue_diametre, plaque_epaisseur + 2]);
 			}
 			//roulement codeuse
