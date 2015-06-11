@@ -1,0 +1,27 @@
+set last_window_maximized False
+set last_window_width 840
+set last_window_height 608
+set port /dev/ttyUSB0
+set baudrate 250000
+set monitor True
+set last_bed_temperature 40.0
+set last_temperature 210.0
+set xy_feedrate 3000
+set z_feedrate 400
+set e_feedrate 150
+set last_file_path /home/nancyborg
+set recentfiles ["/home/nancyborg/drone_bras_Folda05mm.gcode", "/home/nancyborg/Bureau/pieces 3D/Blokus5P.gcode", "/home/nancyborg/Bureau/pieces 3D/couvercleTanukiBoitierDDR_Folda05mm.gcode", "/home/nancyborg/Documents/Imprimante 3D/Robot principal/support roue.gcode", "/home/nancyborg/Bureau/pieces 3D/BoitierDDR_Folda05mm.gcode"]
+set build_dimensions 140.00x140.00x140.00+0.00+0.00+0.00+0.00+0.00+0.00
+set extruders 1
+set uimode Standard
+set slic3rintegration True
+set slic3rupdate False
+set mainviz 3D
+set tempgauges True
+set last_sash_position 605
+set slicecommand /opt/Slic3r3/bin/slic3r --output $o $s
+set sliceoptscommand /opt/Slic3r3/bin/slic3r
+set total_filament_used 560467.006103
+set last_extrusion 20
+set viz3d False
+set bedtemp_pla 30
